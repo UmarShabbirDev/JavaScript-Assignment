@@ -1,0 +1,28 @@
+<html>
+
+<body>
+
+<p id="emailValidate"></p>
+
+<script>
+
+function EmailValidate(str)
+{
+    var pattern = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+    if(pattern.test(str))
+    {  
+       console.log("Valid email address!");  
+    }  
+    else  
+    {     
+        console.log("Invalid email address!");  
+    }
+
+}
+
+
+document.getElementById("EmailValidate").innerHTML = EmailValidate('umarshabbirdev@gmail.com');
+</script>
+
+</body>
+</html>

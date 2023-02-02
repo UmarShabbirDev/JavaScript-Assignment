@@ -1,0 +1,21 @@
+<html>
+
+<body>
+
+<p id="countWord"></p>
+
+<script>
+
+function CountWord(str)
+{
+   
+  let wordCount = str.match(/\w+/g).length;   // Check 13 digit Card Number starting with 4
+   return wordCount;
+}
+
+
+document.getElementById("countWord").innerHTML = CountWord('Hello Umar, How you doing?');
+</script>
+
+</body>
+</html>

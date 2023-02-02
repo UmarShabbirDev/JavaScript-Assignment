@@ -1,0 +1,27 @@
+<html>
+
+<body>
+
+<p id="UpperCase"></p>
+
+<script>
+
+function upper_case(str)
+{
+   const pattern = /[\AA-Z]/;
+   if (pattern.test(str))
+    {
+      console.log("String's first character is uppercase");
+    } 
+    else
+    {
+      console.log("String's first character is not uppercase");
+    }
+}
+
+
+document.getElementById("UpperCase").innerHTML = upper_case('Python');
+</script>
+
+</body>
+</html>

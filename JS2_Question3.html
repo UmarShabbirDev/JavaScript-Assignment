@@ -1,0 +1,27 @@
+<html>
+
+<body>
+
+<p id="CardValidation"></p>
+
+<script>
+
+function ValidateCard(cardnumber)
+{
+   const pattern =  /^4{1}[0-9]{3}[\s]?[0-9]{4}[\s]?[0-9]{4}[\s]?[0-9]{1}$/;   // Check 13 digit Card Number starting with 4
+   if (pattern.test(cardnumber))
+    {
+      console.log("true");
+    } 
+    else
+    {
+      console.log("false");
+    }
+}
+
+
+document.getElementById("CardValidation").innerHTML = ValidateCard(4256964806258);
+</script>
+
+</body>
+</html>
