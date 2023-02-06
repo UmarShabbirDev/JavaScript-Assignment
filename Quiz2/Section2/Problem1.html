@@ -1,0 +1,40 @@
+<html>
+<body>
+<label>Enter your age: </label><br>
+<input id="input1" type="text"><br><br>
+<button type="button" onclick="AgeConversion()">Convert to Days: </button>
+
+<p id="error"></p>
+<p id="Convert"></p>
+
+<script>
+function AgeConversion() {
+  const message = document.getElementById("error");
+  message.innerHTML = "";
+  const message1 = document.getElementById("Convert");
+  message1.innerHTML = "";
+
+  let x = document.getElementById("input1").value;
+  try { 
+    if(x.trim() == "")  throw "X is empty";
+    if(isNaN(x)) throw "X is not a number";
+
+    else
+    {
+
+        let ageDays = x * 365;   
+     
+        message1.innerHTML = "Date: " + ageDays;
+    }
+  }
+  catch(err) {
+    message.innerHTML = "Input " + err;
+  }
+}
+</script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,34 @@
+<html>
+
+<body>
+
+<p id="checkPalindrome"></p>
+
+<script>
+
+
+let CheckPalindrome =  (string) =>
+ {
+
+    leftIndex = 0;
+    rightIndex = string.length-1;
+    while(leftIndex < rightIndex)
+    {
+        if(string[leftIndex] != string[rightIndex])
+        {
+            const str2 = 'Its not a palindrome!';
+            return str2;
+        }
+        leftIndex++;
+        rightIndex--;
+    }
+
+    const str = 'Its a palindrome!';
+    return str;
+}
+
+document.getElementById("checkPalindrome").innerHTML = CheckPalindrome('oodoo');
+</script>
+
+</body>
+</html>

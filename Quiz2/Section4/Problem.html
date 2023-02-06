@@ -1,0 +1,97 @@
+<html>
+
+<body>
+    <label>Enter rows of Matrix A</label><br>
+    <input type="number" id="rowMatrixA"><br><br>
+    <label>Enter columns of Matrix A</label><br>
+    <input type="number" id="colMatrixA"><br><br>
+    <label>Enter rows of Matrix B</label><br>
+    <input type="number" id="rowMatrixB"><br><br>
+    <label>Enter columns of Matrix B</label><br>
+    <input type="number" id="colMatrixB"><br><br>
+    <label>Add value in matrix A </label><br>
+    <input type="number" id="MatrixA-Values">
+    <button type="button" onclick="ArrayMatrixA()">Add </button><br><br>
+    <label>Add value in matrix B</label><br>
+    <input type="number" id="MatrixB-Values">
+    <button type="button" onclick="ArrayMatrixB()">Add </button><br><br>
+
+    <button type="button" onclick="matrixMultiplication()">Matrix Multiplication</button>
+
+    <p id="message"></p>
+
+    <script>
+        let dataArrB = [];
+        let dataArrA = [];
+
+        function ArrayMatrixA()
+        {
+            dataArrB.push(document.getElementById("MatrixA-Values").value)
+        }
+        function ArrayMatrixB()
+        {
+            dataArrB.push(document.getElementById("MatrixB-Values").value)
+        }
+
+            const message = document.getElementById("message");
+            message.innerHTML = "";
+
+        function matrixMultiplication() {
+            let matrixA = [];
+            let rowsMatrixA = document.getElementById("rowMatrixA").value;
+            let colsMatrixA = document.getElementById("colMatrixA").value;
+            
+            for (let i = 0; i < rowsMatrixA; i++) {
+                matrixA[i] = [];
+                for (let j = 0; j < colsMatrixA; j++) {
+                    matrixA[i][j] = dataArrA[j];   // we add data to array and then from corresponding indexes we put data into matrices 
+                }          // 
+            }
+
+
+            let matrixB = [];
+            let rowsMatrixB = document.getElementById("rowMatrixB").value;
+            let colsMatrixB = document.getElementById("colMatrixB").value;
+            let dataArrB = [];
+            for (let i = 0; i < rowsMatrixB; i++) {
+                matrixB[i] = [];
+                for (let j = 0; j < colsMatrixB; j++) {
+                    matrixB[i][j] = dataArrB[j];
+                }
+            }
+
+            let rowsA = matrixA.length;
+            let colsA = matrixA[0].length;
+            let rowsB = matrixB.length;
+            let colsB = matrixB[0].length;
+
+            if (colsA !== rowsB) {
+                console.log("Cannot multiply the two matrices. Incorrect dimensions.");
+                return;
+            }
+
+            let C = [];
+            for (let i = 0; i < rowsA; i++) {
+                C[i] = [];
+                for (let j = 0; j < colsB; j++) {
+                    C[i][j] = 0;
+                }
+            }
+
+            for (let i = 0; i < rowsA; i++) {
+                for (let j = 0; j < colsB; j++) {
+                    for (let k = 0; k < colsA; k++) {
+                        C[i][j] += A[i][k] * B[k][j];
+                    }
+                }
+            }
+            message.innerHTML = "Matrix C: " + C;
+            console.log(C);
+            return C;
+        }
+
+    </script>
+
+</body>
+
+</html>

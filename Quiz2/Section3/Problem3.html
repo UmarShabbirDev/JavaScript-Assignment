@@ -1,0 +1,39 @@
+<html>
+<body>
+<label>Enter a Number</label><br>
+<input type="number" id="num"><br><br>
+<button type="button" onclick="SumOddNumbers()">Sum</button>
+
+<p id="error"></p>
+<p id="Sum"></p>
+
+<script>
+function SumOddNumbers() {
+  const message = document.getElementById("error");
+  message.innerHTML = "";
+  const message1 = document.getElementById("Sum");
+  message1.innerHTML = "";
+
+  let x = document.getElementById("num").value;
+
+  try {
+    if(x.trim() == "")  throw "X is empty";
+    if(isNaN(x)) throw "X is not a number";
+    else
+    {       
+        var sum = (x - 2) * 180;
+        message1.innerHTML = "Sum of Angles of polygon is: " + sum;
+
+    }
+  }
+  catch(err) {
+    message.innerHTML = "Input " + err;
+  }
+}
+</script>
+
+</body>
+</html>
+
+
+

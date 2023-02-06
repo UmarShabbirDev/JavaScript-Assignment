@@ -1,0 +1,45 @@
+<html>
+<body>
+<label>Enter Number to convert to specific decimal places</label><br>
+<input id="input1" type="text"><br><br>
+<label>Decimal Places</label><br>
+<input id="input2" type="text"><br><br>
+<button type="button" onclick="ConvertDecimal()">Conversions</button>
+
+<p id="error"></p>
+<p id="Convert"></p>
+
+<script>
+function ConvertDecimal() {
+  const message = document.getElementById("error");
+  message.innerHTML = "";
+  const message1 = document.getElementById("Convert");
+  message1.innerHTML = "";
+
+  let x = document.getElementById("input1").value;
+  let y = document.getElementById("input2").value;
+  try { 
+    if(x.trim() == "")  throw "X is empty";
+    if(y.trim() == "")  throw "Y is empty";
+    if(isNaN(x)) throw "X is not a number";
+    if(isNaN(y)) throw "Y is not a number";
+    //
+    else
+    {
+        x = Number(x);
+        y = Number(y);
+        let convert = x.toFixed(y);    // Tofixed is build-in function to convert a number upto some decimal number and round the number.
+        message1.innerHTML = "Total: " + convert;
+    }
+  }
+  catch(err) {
+    message.innerHTML = "Input " + err;
+  }
+}
+</script>
+
+</body>
+</html>
+
+
+

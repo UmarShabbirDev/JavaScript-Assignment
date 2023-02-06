@@ -1,0 +1,61 @@
+<html>
+<body>
+<label>Enter a Number</label><br>
+<input type="number" id="num"><br><br>
+<button type="button" onclick="SumOddNumbers()">Sum </button>
+
+<p id="error"></p>
+<p id="Convert"></p>
+<p id="validaion"></p>
+
+<script>
+
+function SumOddNumbers() {
+  const message = document.getElementById("error");
+  message.innerHTML = "";
+  const message1 = document.getElementById("Convert");
+  message1.innerHTML = "";
+
+  let x = document.getElementById("num").value;
+
+  try {
+    if(x.trim() == "")  throw "X is empty";
+    if(isNaN(x)) throw "X is not a number";
+    if(x.length < 5) throw "Enter a number greater than length 5 (12345)";
+    else
+    {
+        x= x.toString();
+        let  len = x.toString().length;
+        message1.innerHTML = "Total: " + len;
+        let arr =[];
+        for(let i=0; i < len ; i++)
+        {
+            arr[i]=x % 10;
+            arr[i] = Math.trunc(arr[i]);  // convert to whole number and take first digit
+            console.log(arr[i]);
+            x = x / 10;
+            
+        }
+       var sum = 0;
+    for(let j = len - 1; j >= 0 ; j--)
+    {
+        console.log(arr[j]);
+        if(arr[j] % 2 != 0)
+        {
+            sum = sum + arr[j];
+        }
+        message1.innerHTML = "Sum : " + sum;
+    }
+    }
+  }
+  catch(err) {
+    message.innerHTML = err;
+  }
+}
+</script>
+
+</body>
+</html>
+
+
+

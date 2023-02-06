@@ -1,0 +1,6 @@
+Differentiate arrow functions and regular functions
+
+
+1. Regular functions are callable and constructable while arrow functions are just callable.
+2. Regular functions have argument biding while arrow functions dont have.
+3. Regular functions have their own dynamic this binding, while arrow functions do not have their own this.
